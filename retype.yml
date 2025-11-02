@@ -1,7 +1,7 @@
 input: .
 output: .retype
 
-url: docs.example.com # Use your website address here
+url: https://left0807.github.io/my-blog/ # Use your website address here
 
 start:
   # Uncomment the next line to try Retype Pro features
@@ -9,7 +9,6 @@ start:
 
 branding:
   title: LeftSite
-  label: v0.0.1
 
 links:
   - text: Getting Started
