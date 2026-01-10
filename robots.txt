@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://left0807.github.io/my-blog/sitemap.xml.gz
+Sitemap: https://docs.example.com/sitemap.xml.gz
