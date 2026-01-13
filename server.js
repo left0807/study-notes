@@ -6,7 +6,7 @@ const MarkdownIt = require('markdown-it');
 const app = express();
 const md = new MarkdownIt();
 const PORT = 5000;
-const NOTES_DIR = __dirname;
+const NOTES_DIR = __dirname + '/notes';
 
 // Serve static files from public directory
 app.use(express.static('public'));
