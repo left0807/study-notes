@@ -40,3 +40,48 @@ All factories (A) are plants (B) <br>
 all factories (A) are things that contain cholorophyll (C) <br>
 Here plants have different meaning in 1st and 2nd sentance
 
+
+## The Ontological Argument (by St. Anselm)
+
+> God is the greatest being
+> Nothing greater can be conceived
+> An existing God is greater than non-existing God
+> God must exist
+
+
+## Kant's Objection: 'Existence' is Not a Perdicate (存在並非性質）
+
+A existing god === a non-existing god
+
+```
+被語言文法欺騙
+e.g. 
+高基全是肥的 (肥 -> bachelor)
+神是存在的
+|   |
+<--<-
+
+- real predicate: is one which can be used to help define what something is.
+- 'bachelor (單身漢)' is a unmarried male -> 20 found
++ happy
+- bachelor is a happy unmarried male -> 15 found
+
+happy -> real predicate for bachelor
+
+find bachelor v.s. find existing bachelor 
+- They are the same
+
+exist is not predicate
+```
+
+> 存在是量詞
+
+$ \exists \forall $ -> 量詞
+
+
+
+
+
+
+
+
