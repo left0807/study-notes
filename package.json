@@ -1,0 +1,13 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "description": "Study notes navigation website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "markdown-it": "^13.0.1"
+  }
+}
