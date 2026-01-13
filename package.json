@@ -4,10 +4,20 @@
   "description": "Study notes navigation website",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop my-blog",
+    "pm2:restart": "pm2 restart my-blog",
+    "pm2:delete": "pm2 delete my-blog",
+    "pm2:logs": "pm2 logs my-blog",
+    "pm2:status": "pm2 status",
+    "sync": "node sync-from-github.js"
   },
   "dependencies": {
     "express": "^4.18.2",
     "markdown-it": "^13.0.1"
+  },
+  "devDependencies": {
+    "pm2": "^5.3.0"
   }
 }
