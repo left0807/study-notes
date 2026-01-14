@@ -1,4 +1,5 @@
 let currentPath = '';
+let sidebarCollapsed = false;
 
 async function loadDirectory(path = '') {
     try {
@@ -80,5 +81,22 @@ async function loadFile(path) {
     }
 }
 
-// Initialize: load root directory
+function setupSidebarToggle() {
+    const toggleButton = document.getElementById('toggle-sidebar');
+    const container = document.querySelector('.container');
+
+    if (!toggleButton || !container) return;
+
+    toggleButton.addEventListener('click', () => {
+        sidebarCollapsed = !sidebarCollapsed;
+        if (sidebarCollapsed) {
+            container.classList.add('sidebar-collapsed');
+        } else {
+            container.classList.remove('sidebar-collapsed');
+        }
+    });
+}
+
+// Initialize
 loadDirectory();
+setupSidebarToggle();

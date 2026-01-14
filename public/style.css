@@ -25,11 +25,50 @@ body {
     overflow-y: auto;
 }
 
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
 .sidebar h1 {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     color: #ffffff;
     font-weight: normal;
+}
+
+#toggle-sidebar {
+    background-color: #2a2d2e;
+    border: 1px solid #3e3e42;
+    color: #d4d4d4;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1;
+}
+
+#toggle-sidebar:hover {
+    background-color: #3a3d3e;
+}
+
+.container.sidebar-collapsed .sidebar {
+    width: 0;
+    padding: 20px 0;
+    border-right: none;
+    overflow: hidden;
+}
+
+.container.sidebar-collapsed .content {
+    padding-left: 40px;
+}
+
+.container.sidebar-collapsed #toggle-sidebar {
+    transform: rotate(180deg);
 }
 
 #breadcrumb {
