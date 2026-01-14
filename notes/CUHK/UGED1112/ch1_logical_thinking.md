@@ -1,87 +1,76 @@
-# Logical Thinking 
+# 邏輯思考 Logical Thinking
 
-> Hamsandwich is better than nothing
->
-> Nothing is better than God
->> Therefore, hamsandwich is better than God
+> 火腿三明治比什麼都沒有好  
+> 沒有東西比神更好  
+> 因此，火腿三明治比神更好
 
+---
 
-Logic
-: evaluate argumeents: distinguish good/bad reasoning
+## 邏輯 Logic  
+評估論證（arguments），區分好推理與壞推理。
 
-Formal logic
-: comprehensive system for evaluating arguments
-ie. for **any kind of arguments that could exist** this system provide an evaluation
+---
 
-syllogism
-: 三段式 =>
-: All As are Bs <br>
- <u>Some Cs are As</u> <br>
- Some Cs are Bs
+## 形式邏輯 Formal Logic  
+一個評估論證的綜合系統 —— 對於**任何可能存在的論證**，這個系統都能提供評估。
 
-: e.g.
-All mammals are vertebrates <br>
-<u>Some sea creatures are nannals</u> <br>
-Some sea creatures are vertebrates <br>
--> all arguments of this form are **good argument**
+### 三段論 Syllogism（三段式）  
+**結構範例**：  
+所有 *A* 都是 *B*  
+有些 *C* 是 *A*  
+∴ 有些 *C* 是 *B*
 
-: 三段式 have 2^3 = 64 combination (All, Some, No), 16 of them are good
+**實例**：  
+所有哺乳動物（mammals）都是脊椎動物（vertebrates）  
+有些海洋生物（sea creatures）是哺乳動物  
+∴ 有些海洋生物是脊椎動物  
+→ 所有這種**形式**的論證都是**好論證**。
 
-Informal Logic
-: case-by-case<br>
-具體的用法<br>
-具體內容<br>
-具體使用者<br>
+- 三段論共有 \( 2^3 = 64 \) 種可能的組合（使用“所有 All”、“有些 Some”、“沒有 No”），其中 16 種是邏輯有效的。
 
-: some arugment contain fallacy, but **can't tell from the form**<br>
-e.g. <br> 
-All factories (A) are plants (B) <br>
-<u>All plants (B) are things that contain chlorophyll (C)</u> <br> 
-all factories (A) are things that contain cholorophyll (C) <br>
-Here plants have different meaning in 1st and 2nd sentance
+---
 
+## 非形式邏輯 Informal Logic  
+根據具體情況分析，考慮：
+- 具體用詞
+- 具體內容
+- 具體語境/使用者
 
-## The Ontological Argument (by St. Anselm)
+有些論證包含謬誤（fallacies），但**無法單從形式看出**。
 
-> God is the greatest being
-> Nothing greater can be conceived
-> An existing God is greater than non-existing God
-> God must exist
+**例子**：  
+所有工廠（A）都是植物（B）［plants 可指工廠或植物］  
+所有植物（B）都是含有葉綠素（C）的東西  
+∴ 所有工廠（A）都是含有葉綠素的東西  
+→ 這裡，“plants” 在第一個前提和第二個前提中意義不同（equivocation，歧義謬誤）。
 
+---
 
-## Kant's Objection: 'Existence' is Not a Perdicate (存在並非性質）
+## 本體論論證 The Ontological Argument（聖安瑟莫 St. Anselm 提出）
 
-A existing god === a non-existing god
+1. 神是最偉大的存有（the greatest being）。
+2. 沒有比神更偉大的可以被設想（conceived）。
+3. 存在的神比不存在的神更偉大。
+4. 因此，神必須存在。
 
-```
-被語言文法欺騙
-e.g. 
-高基全是肥的 (肥 -> bachelor)
-神是存在的
-|   |
-<--<-
+---
 
-- real predicate: is one which can be used to help define what something is.
-- 'bachelor (單身漢)' is a unmarried male -> 20 found
-+ happy
-- bachelor is a happy unmarried male -> 15 found
+## 康德的異議 Kant's Objection：“存在”不是謂詞（predicate）
 
-happy -> real predicate for bachelor
+**核心論點**：  
+一個「存在的神」與一個「不存在的神」在定義上是相同的概念  
+→ 我們被語法形式（grammatical form）欺騙了。
 
-find bachelor v.s. find existing bachelor 
-- They are the same
+**真正的謂詞（real predicate）**：能夠幫助定義某物**是什麼**的性質。
 
-exist is not predicate
-```
+**例子**：  
+- 「單身漢（bachelor）」＝未婚男性 → 找到 20 人  
+- 「快樂的單身漢（happy bachelor）」＝快樂的未婚男性 → 找到 15 人  
+→ “快樂的（happy）”是單身漢的真正謂詞。
 
-> 存在是量詞
+但是：  
+「找單身漢」與「找存在的單身漢」結果相同  
+→ **存在（existence）不是謂詞**，而是**量詞（quantifier）**。
 
-$ \exists \forall $ -> 量詞
-
-
-
-
-
-
-
-
+在邏輯符號中：  
+$\exists$（存在 there exists）和 $\forall$（所有 for all）是**量詞**，不是謂詞。

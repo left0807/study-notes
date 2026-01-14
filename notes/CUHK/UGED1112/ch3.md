@@ -1,36 +1,72 @@
-Valid argument(有效論證)
-: When its premises are true, the conslusion must be true
+# 有效論證 (Valid argument)
 
-Invalid argument
-: Even its premises are tue, the conclusion may be false / it is possible that all the premisses are true but the conclusion is false
+**定義**：當其前提為真時，結論**必定**為真。  
+→ 前提真則結論不可能假
 
-> If all theories are created by human (P), all theories arenot perfect (Q)
-> All theories are created by human (P)
-> -------------------------------
-> all theorem are not perfect (Q)
+---
 
-> If P then Q
-> P
-> ----
-> Q
+# 無效論證 (Invalid argument)  
+即使其前提為真，結論**仍可能為假** / 可能出現所有前提為真，但結論為假的情況。
 
-This is a valid argument
+---
 
-> If P then Q
-> P
-> --
-> Q
+## 例子說明
 
-This is a invalid argument
-如 P 真，Q 真
-但Q真，P不一定真
+**例一（有效論證）**：
+```
+如果所有理論都是人造的 (P)，則所有理論都不完美 (Q)
+所有理論都是人造的 (P)
+—————————————————————————————
+因此，所有理論都不完美 (Q)
+```
 
+**邏輯形式**：
+```
+如果 P 則 Q
+P
+——————
+Q
+```
+（此形式稱為 **肯定前件 modus ponens**，是有效的推論規則）
 
-unless === if not
+---
 
-> 凡係有頭的都是都可以被斬頭
-> A 有頭
-> -------------------------
-> A 可以被斬頭
+**例二（無效論證）**：
+```
+如果 P 則 Q
+Q
+——————
+P
+```
+（此形式稱為 **肯定後件 fallacy of affirming the consequent**，是無效的）
 
+**解釋**：  
+如 P 真 ⇒ Q 真  
+但 Q 真 ⇒ P 不一定真（可能其他原因導致 Q 真）
 
+---
+
+## 關鍵詞對照
+- unless = if not（除非 = 如果不）
+
+---
+
+## 練習判斷
+```
+凡是有頭的東西都可以被斬頭
+A 有頭
+————————————————
+A 可以被斬頭
+```
+
+**分析**：  
+這是一個**有效論證**（形式為：所有 M 都是 P；S 是 M；因此 S 是 P）。  
+但需注意：前提是否為真（例如，“凡是有頭的東西都可以被斬頭”是否必然真）是另一問題。邏輯有效性只關心推理形式，不保證前提真實。
+
+---
+
+**重點回顧**：
+- 有效性 (validity) 關注**形式**：前提真則結論必真
+- 無效性 (invalidity)：前提真時，結論仍可能假
+- 有效論證仍可能因前提為假而結論為假
+- 真實性 (truth) 與有效性 (validity) 是兩個不同概念

@@ -1,42 +1,62 @@
-> The robber sticking up a bank today does so as a resilt of a series of causes that can be traced back prior to his birth.
+# 論證、命題、前提與結論
+
+> 今天搶劫銀行的劫匪的行為，是由一系列可追溯至他出生前的原因所導致的。
 
 ```
-Everything is caused 
-If everything is caused, then no one acts freely
-Therfore, no one acts freely
+1. 所有事物都有原因  
+2. 如果所有事物都有原因，那麼沒有人能自由行動  
+————————————————————  
+3. 因此，沒有人能自由行動  
 
-No one acts freely
-If no one acts freely, then no one is responsible for his or her actions
-Therefore, no one is responsible for his or her action
+4. 沒有人能自由行動  
+5. 如果沒有人能自由行動，那麼沒有人要為自己的行為負責  
+————————————————————  
+6. 因此，沒有人要為自己的行為負責  
 ```
 
-What's wrong?
+**這裡的問題是什麼？**  
+這是關於**決定論（determinism）與自由意志（free will）**的經典爭論。  
+即使前提1和2成立，也不必然推出結論3，因為可能存在**有原因但仍有自由選擇**的情況（如相容論 compatibilism 的主張）。此外，該論證忽略了「原因」與「強制」之間的區別。
 
-# Proposition, Arguments, Premises and 
+---
 
-Proposition
-: An assertion that something is (or is not) the case; all proposition is either true or false
-: 命題符號 != 命題 => 抽象
-: If God did not exist, everthing would be permissible （-> if there is a standard to classify true/false）
-: If 努力，then A
-: 劉青雲比劉德華英俊 （好難分真假，但並非無真假可言）
-: 高基全覺得梁潮偉比劉德華英俊
-：射十二碼，一係入，一係唔入
+## 命題 Proposition  
+一個**聲稱某事是（或不是）如此**的陳述；所有命題非真即假。
 
-Argument
-: A group of proposition, one or more of which (the premises) are claimed to provide support for one of the other (the conclusion)
+- 命題符號 ≠ 命題 → 命題符號是抽象表達  
+- 例子：  
+  - “如果神不存在，一切都將被允許”（這是有真假可言的命題，雖然真假難以判定）  
+  - “如果努力，就會成功”（命題，但真假依情況而定）  
+  - “劉青雲比劉德華英俊”（主觀審美命題，但並非沒有真假）  
+  - “高基全覺得梁朝偉比劉德華英俊”（描述個人感受的命題，有真假）  
+  - “射十二碼，不是進就是沒進”（必然真或假的命題）
 
-Premise
-: A proposition that use to support other proposition
+---
 
-Conclusion
-: A proposition that supported by other proposition
+## 論證 Argument  
+一組命題，其中一個或多個（前提）被聲稱用來支持另一個（結論）。
 
-Standard form
-: 1. Premises 1
-2. Premises 2
-------------
-3. Conclusion
+---
 
-Why he drink 2 can of 葡萄適 in lecture
+## 前提 Premise  
+用來支持其他命題的命題。
 
+---
+
+## 結論 Conclusion  
+被其他命題所支持的命題。
+
+---
+
+## 標準形式 Standard Form  
+1. 前提 1  
+2. 前提 2  
+————————————  
+3. 結論
+
+---
+
+**為什麼他在課上喝了兩罐葡萄適？**  
+這是一個**事實性問題**，不是邏輯命題或論證，需要通過觀察或詢問當事人才能回答。
+
+---
