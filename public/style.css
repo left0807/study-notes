@@ -134,11 +134,32 @@ body {
     content: '📄';
 }
 
+.file-item.file-type-pdf::before {
+    content: '📕';
+}
+
 .content {
     flex: 1;
     overflow-y: auto;
     padding: 40px;
     background-color: #1e1e1e;
+    position: relative;
+}
+
+.pdf-container {
+    width: 100%;
+    height: calc(100vh - 80px);
+    min-height: 600px;
+    border: 1px solid #3e3e42;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #252526;
+}
+
+.pdf-container iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
 }
 
 #markdown-content {

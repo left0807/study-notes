@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs').promises;
+const fsSync = require('fs');
 const path = require('path');
 const MarkdownIt = require('markdown-it');
 const markdownItKatex = require('markdown-it-katex');
@@ -52,6 +53,14 @@ app.get('/api/list', async (req, res) => {
         result.push({
           name: item.name,
           type: 'file',
+          fileType: 'markdown',
+          path: relativePath
+        });
+      } else if (item.name.endsWith('.pdf')) {
+        result.push({
+          name: item.name,
+          type: 'file',
+          fileType: 'pdf',
           path: relativePath
         });
       }
@@ -85,10 +94,47 @@ app.get('/api/file', async (req, res) => {
       return res.status(403).json({ error: 'Access denied' });
     }
 
+    // Check if it's a PDF file
+    if (filePath.endsWith('.pdf')) {
+      return res.status(400).json({ error: 'Use /api/pdf endpoint for PDF files' });
+    }
+
     const content = await fs.readFile(fullPath, 'utf-8');
     const html = md.render(content);
     
-    res.json({ html, path: filePath });
+    res.json({ html, path: filePath, fileType: 'markdown' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// API endpoint to serve PDF files
+app.get('/api/pdf', async (req, res) => {
+  try {
+    const filePath = req.query.path || '';
+    const fullPath = path.join(NOTES_DIR, filePath);
+    
+    // Security check
+    const resolvedPath = path.resolve(fullPath);
+    const resolvedNotesDir = path.resolve(NOTES_DIR);
+    
+    if (!resolvedPath.startsWith(resolvedNotesDir)) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
+
+    // Check if file exists and is a PDF
+    const stats = await fs.stat(fullPath);
+    if (!stats.isFile() || !filePath.endsWith('.pdf')) {
+      return res.status(400).json({ error: 'Invalid PDF file' });
+    }
+
+    // Set headers for PDF
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `inline; filename="${path.basename(filePath)}"`);
+    
+    // Stream the PDF file
+    const fileStream = fsSync.createReadStream(fullPath);
+    fileStream.pipe(res);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

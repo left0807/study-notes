@@ -43,16 +43,21 @@ function renderFileList(items) {
     
     fileList.innerHTML = items.map(item => {
         const className = `file-item ${item.type}`;
-        return `<div class="${className}" onclick="handleItemClick('${item.type}', '${item.path}', this)">${item.name}</div>`;
+        const fileTypeClass = item.fileType ? ` file-type-${item.fileType}` : '';
+        return `<div class="${className}${fileTypeClass}" onclick="handleItemClick('${item.type}', '${item.path}', '${item.fileType || ''}', this)">${item.name}</div>`;
     }).join('');
 }
 
-function handleItemClick(type, path, element) {
+function handleItemClick(type, path, fileType, element) {
     if (type === 'directory') {
         loadDirectory(path);
         document.getElementById('markdown-content').innerHTML = '';
     } else if (type === 'file') {
-        loadFile(path);
+        if (fileType === 'pdf') {
+            loadPDF(path);
+        } else {
+            loadFile(path);
+        }
         // Update active state
         document.querySelectorAll('.file-item').forEach(item => {
             item.classList.remove('active');
@@ -79,6 +84,18 @@ async function loadFile(path) {
         document.getElementById('markdown-content').innerHTML = 
             `<div class="empty-state">Error loading file</div>`;
     }
+}
+
+function loadPDF(path) {
+    const pdfUrl = `/api/pdf?path=${encodeURIComponent(path)}`;
+    document.getElementById('markdown-content').innerHTML = 
+        `<div class="pdf-container">
+            <iframe src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
+                <p>Your browser does not support PDFs. <a href="${pdfUrl}" target="_blank">Download the PDF</a> instead.</p>
+            </iframe>
+        </div>`;
+    // Scroll to top
+    document.querySelector('.content').scrollTop = 0;
 }
 
 function setupSidebarToggle() {
