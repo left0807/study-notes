@@ -2,9 +2,14 @@ const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
 const MarkdownIt = require('markdown-it');
+const markdownItKatex = require('markdown-it-katex');
 
 const app = express();
-const md = new MarkdownIt();
+const md = new MarkdownIt({
+  html: true,
+  linkify: true,
+  breaks: true,
+}).use(markdownItKatex);
 const PORT = 5000;
 const NOTES_DIR = __dirname + '/notes';
 
