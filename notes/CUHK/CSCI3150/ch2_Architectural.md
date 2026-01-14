@@ -1,11 +1,6 @@
+# Events
 
-
-## Memory Protection
-
-### Events
-
-
-#### Flow
+## Flow
 
 - After the OS has booted, all entry to the kernel happens ad the result of an event
     - event immediately stops current execution
@@ -15,13 +10,15 @@
     - Event immediately stop current execution
     - Changes mode, context, or both (single core)
 
-----------
+```
+---------- ----------
 |  user  ||  kernel  | 
-----------
+---------- ----------
         ^
         |
         context switch
         user mode -> kernel mode
+```
 
 - kernel defines a handler for each eent ype
     - Event handler always execute in kernal mode
@@ -34,7 +31,7 @@
     4. restore state
 
 
-#### Category
+# Category
 
 interrupts
 : caused by an external event (e.g. I/O Ctrl+C)
@@ -44,18 +41,22 @@ exceptions
 
 two reason for events: ** unexpected and delibreate **
 
+```
++------------------------------------------------------------------------+
 |                                      | Unexpected | Delibrate          |
++--------------------------------------+------------+--------------------+
 | Exception(sync) -> within context    | fault      | syscall trap       |
 | Interrupts(async) -> outside context | interrupt  | software interrupt |
++--------------------------------------+------------+--------------------+
+```
 
-
-#### Faults
+# Faults
 - Hardware detects and reports "exceptional" conditions
     -  Page fault, devide by zero, unaligned acess
 - Upon exception, hardware "faults" (verb)
-        
+
 - Fault exception == performace optimization
-    
+
 - Handling Fault: fixing it / notifying the process
 
 - kernal may handle unrecoverable faults by killing the user
@@ -67,7 +68,7 @@ two reason for events: ** unexpected and delibreate **
     - fatal -> os crash -> hernal is halted, state dumped to core file
 
 
-#### System Call
+# System Call
 For a user to do some "privileged" action (e.g. I/O)
 
 - Hardware procides a system call instruction that
@@ -97,3 +98,49 @@ open: ;Linux convention:
 ```
 
 
+```
+Firefox: open() --------------------
+        |    trap to kernel mode    |
+uesr    v                           |
+------------------------------------^  restore
+kernel  |                           |
+        V                           |
+      open() kernel routine --------
+```
+
+
+# Interrupts
+
+- I/O hardware interrupts
+- Hardware timers 
+
+## how to find interupt handler
+- OS sets up the interrupt descripter table (IDT) at boot time
+
+- `headler = IDT[intr_number]`
+
+## Timer
+
+- Critical for an operating system
+- Timer is set to generate an interrupt signal after a period of time
+- Prevent infinite loop
+- Basis for schduler
+- used to time-based function (e.g. sleep())
+
+## Alt. method
+- Polling method:
+
+```cpp
+while(Ethernet_cared_queue_is_empty);
+handle_packets(); 
+```
+
+this methods burn cpu i.e. running while loop for nothing
+
+- if not frequent IO: Polling is wasteful
+
+- if high frequency IO: Polling is better
+- no context switch is needed
+
+
+上堂瞓着咗。。。
