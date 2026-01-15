@@ -79,6 +79,8 @@ async function loadFile(path) {
             document.getElementById('markdown-content').innerHTML = 
                 `<div class="empty-state">Error loading file: ${data.error}</div>`;
         }
+        hljs.highlightAll();
+
     } catch (error) {
         console.error('Error:', error);
         document.getElementById('markdown-content').innerHTML = 
