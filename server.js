@@ -11,6 +11,8 @@ const md = new MarkdownIt({
   linkify: true,
   breaks: true,
 }).use(markdownItKatex);
+
+
 const PORT = 5000;
 const NOTES_DIR = __dirname + '/notes';
 
