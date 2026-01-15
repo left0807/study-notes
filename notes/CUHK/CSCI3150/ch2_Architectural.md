@@ -83,7 +83,7 @@ For a user to do some "privileged" action (e.g. I/O)
     - ** Reason **: Because different kernel have different set of syscall
     
 e.g.
-```asm
+```
 open (path, flags, mode);
 
 open: ;Linux convention:
