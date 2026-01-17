@@ -4,6 +4,9 @@ const fsSync = require('fs');
 const path = require('path');
 const MarkdownIt = require('markdown-it');
 const markdownItKatex = require('markdown-it-katex');
+const basicAuth = require('express-basic-auth'); // Import for basic authentication
+
+require('dotenv').config();
 
 const app = express();
 const md = new MarkdownIt({
@@ -15,6 +18,25 @@ const md = new MarkdownIt({
 
 const PORT = 44747;
 const NOTES_DIR = __dirname + '/notes';
+
+// --- Authentication Middleware ---
+const auth = basicAuth({
+    users: {
+        'admin': process.env.WEBSITE_PASSWORD || 'temporary_dev_password'
+    },
+    challenge: true,
+    realm: 'ImProtected'
+});
+
+// Apply authentication middleware to all routes except API routes
+app.use((req, res, next) => {
+    if (req.originalUrl.startsWith('/api/')) {
+        next();
+    } else {
+        auth(req, res, next);
+    }
+});
+// --- End Authentication Middleware ---
 
 // Serve static files from public directory
 app.use(express.static('public'));
