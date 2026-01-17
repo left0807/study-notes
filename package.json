@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:start": "pm2 start deploy/ecosystem.config.js",
     "pm2:stop": "pm2 stop my-blog",
     "pm2:restart": "pm2 restart my-blog",
     "pm2:delete": "pm2 delete my-blog",
@@ -14,7 +14,9 @@
     "sync": "node sync-from-github.js"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^4.18.2",
+    "express-basic-auth": "^1.2.1",
     "highlight.js": "^11.11.1",
     "katex": "^0.16.27",
     "markdown-it": "^13.0.1",
