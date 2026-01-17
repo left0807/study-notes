@@ -28,64 +28,37 @@ npm start
 http://localhost:5000
 ```
 
-## Production Deployment (24/7 Operation)
+## How to Contribute
 
-### Initial Setup
+We welcome contributions! If you'd like to contribute to this project, please follow these steps:
 
-1. Install PM2 globally (if not already installed):
-```bash
-npm install -g pm2
-```
-
-2. Install project dependencies:
-```bash
-npm install
-```
-
-3. Start the application with PM2:
-```bash
-npm run pm2:start
-```
-
-4. Set PM2 to start on system boot:
-```bash
-pm2 startup
-pm2 save
-```
-
-### Daily GitHub Sync Setup
-
-The application can automatically sync notes from GitHub daily. To set this up:
-
-1. Make sure your repository is connected to GitHub:
-```bash
-git remote -v
-```
-
-2. Run the cron setup script:
-```bash
-./setup-cron.sh
-```
-
-This will configure a daily sync at 2:00 AM. You can manually test the sync with:
-```bash
-npm run sync
-```
-
-### PM2 Management Commands
-
-- View status: `npm run pm2:status`
-- View logs: `npm run pm2:logs`
-- Restart: `npm run pm2:restart`
-- Stop: `npm run pm2:stop`
-- Delete: `npm run pm2:delete`
-
-### Manual Sync
-
-To manually sync from GitHub:
-```bash
-npm run sync
-```
+1.  **Fork the repository**: Click the "Fork" button on the project's GitHub page to create your own copy of the repository.
+2.  **Clone your fork**:
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
+    cd your-blog
+    ```
+    (Replace `YOUR_USERNAME` and `YOUR_REPOSITORY_NAME` with your actual GitHub username and repository name.)
+3.  **Create a new branch**: For any new feature or bug fix, create a dedicated branch:
+    ```bash
+    git checkout -b feature/your-feature-name
+    # or
+    git checkout -b fix/your-bug-fix
+    ```
+4.  **Make your changes**: Implement your feature or fix the bug.
+5.  **Test your changes**: Ensure your changes do not break existing functionality and add new tests if applicable.
+6.  **Commit your changes**: Commit your changes with clear and concise messages.
+    ```bash
+    git add .
+    git commit -m "feat: Add new feature X"
+    # or
+    git commit -m "fix: Resolve bug Y"
+    ```
+7.  **Push to your fork**:
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+8.  **Create a Pull Request**: Open a Pull Request from your fork to the main repository. Describe your changes clearly.
 
 ## Usage
 
