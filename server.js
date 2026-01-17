@@ -13,7 +13,7 @@ const md = new MarkdownIt({
 }).use(markdownItKatex);
 
 
-const PORT = 5000;
+const PORT = 44747;
 const NOTES_DIR = __dirname + '/notes';
 
 // Serve static files from public directory
@@ -142,6 +142,6 @@ app.get('/api/pdf', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
